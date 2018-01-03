@@ -476,7 +476,7 @@
 <p>#配置项目工作空间名称<br>PROJECT_WORKSPACE_NAME=test</p>
 <p>#配置项目Target名称<br>PROJECT_SCHEME_NAME=test</p>
 <p>#配置的plist  - ipa.list<br>CONFIG_NAME=”IPA”</p>
-<h1 id="配置apiKey"><a href="#配置apiKey" class="headerlink" title="配置apiKey"></a>配置apiKey</h1><p>firApiKey=”5f0c3e97009203b92b4e89b38dd174b5”</p>
+<p>#配置apiKey<br>firApiKey=”5f0c3e97009203b92b4e89b38dd174b5”</p>
 <p>#项目路径(不需要配置)<br>PROJECT_PATH=$(pwd)</p>
 <p>#build time (不需要配置)<br>BUILD_TIME=$(date +%Y%m%d%H%M)</p>
 <p>#project temp path (可选配置)<br>PROJECT_TEMP_PATH=${PROJECT_PATH}_TEMP</p>
@@ -495,8 +495,8 @@
 <p>xcodebuild -workspace ${PROJECT_WORKSPACE_NAME}.xcworkspace -scheme ${PROJECT_SCHEME_NAME} -configuration Debug build archive -archivePath ${ARCHIVE_PATH}</p>
 <p>#xctool -workspace ${PROJECT_WORKSPACE_NAME}.xcworkspace -scheme ${PROJECT_SCHEME_NAME} build archive -archivePath ${ARCHIVE_PATH}</p>
 <p>#删除拷贝的项目<br>echo “delete project temp path.”<br>cd ${PROJECT_PATH}<br>rm -r -f ${PROJECT_TEMP_PATH}</p>
-<p>#打包ipa<br>echo “export ipa file to export path.”<br>xcodebuild -exportArchive -archivePath ${ARCHIVE_PATH}.xcarchive -exportPath ${EXPORT_PATH} -exportOptionsPlist $(pwd)/${CONFIG_NAME}.plist<br>#</p>
-<h1 id="上传fir"><a href="#上传fir" class="headerlink" title="上传fir"></a>上传fir</h1><p>fir publish ${UPLOAD_PATH_IPA} -T ${firApiKey} -c “${commit_msg}”</p>
+<p>#打包ipa<br>echo “export ipa file to export path.”<br>xcodebuild -exportArchive -archivePath ${ARCHIVE_PATH}.xcarchive -exportPath ${EXPORT_PATH} -exportOptionsPlist $(pwd)/${CONFIG_NAME}.plist</p>
+<p>#上传fir<br>fir publish ${UPLOAD_PATH_IPA} -T ${firApiKey} -c “${commit_msg}”</p>
 <p>#输出总用时<br>echo “===Finished. Total time: ${SECONDS}s===”</p>
 <p>#通过api上传到蒲公英当中</p>
 <p>#RESULT=$(curl -F “file=@${UPLOAD_PATH_IPA}” -F “uKey=$pgyerUKey” -F “_api_key=$pgyerApiKey” <a href="http://www.pgyer.com/apiv1/app/upload" target="_blank" rel="noopener">http://www.pgyer.com/apiv1/app/upload</a>)</p>
