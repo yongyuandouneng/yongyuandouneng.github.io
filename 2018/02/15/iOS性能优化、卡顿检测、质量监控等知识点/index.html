@@ -17,10 +17,12 @@
 
 
 
-  <meta name="description" content="时间都去哪儿了"/>
+  <meta name="description" content="iOS性能优化"/>
 
 
 
+
+  <meta name="keywords" content="iOS性能优化, 郑永能の博客" />
 
 
 
@@ -40,7 +42,7 @@
 
 
 
-<link rel="canonical" href="http://yongyuandouneng.com/"/>
+<link rel="canonical" href="http://yongyuandouneng.com/2018/02/15/iOS性能优化、卡顿检测、质量监控等知识点/"/>
 
 
 
@@ -87,7 +89,7 @@
   window.config = {"title":"郑永能の博客","subtitle":"不积跬步，无以至千里；不积小流，无以成江海。","description":"时间都去哪儿了","author":"郑永能","language":"zh-Hans","timezone":"Asia/Shanghai","url":"http://yongyuandouneng.com","root":"/","permalink":":year/:month/:day/:title/","permalink_defaults":null,"source_dir":"source","public_dir":"public","tag_dir":"tags","archive_dir":"archives","category_dir":"categories","code_dir":"downloads/code","i18n_dir":":lang","skip_render":null,"new_post_name":":title.md","default_layout":"post","titlecase":false,"external_link":true,"filename_case":0,"render_drafts":false,"post_asset_folder":false,"relative_link":false,"future":true,"highlight":{"enable":true,"auto_detect":true,"line_number":true,"tab_replace":null},"default_category":"uncategorized","category_map":null,"tag_map":null,"date_format":"YYYY-MM-DD","time_format":"HH:mm:ss","per_page":10,"pagination_dir":"page","theme":"even","deploy":{"type":"git","repository":"https://github.com/yongyuandouneng/yongyuandouneng.github.io.git","branch":"master"},"ignore":[],"index_generator":{"per_page":10,"order_by":"-date","path":""},"disqus_shortname":null,"archive_generator":{"per_page":10,"yearly":true,"monthly":true,"daily":false},"category_generator":{"per_page":10},"feed":{"type":"atom","limit":20,"hub":"","content":true,"content_limit":140,"content_limit_delim":"","path":"atom.xml"},"tag_generator":{"per_page":10},"marked":{"gfm":true,"pedantic":false,"sanitize":false,"tables":true,"breaks":true,"smartLists":true,"smartypants":true,"modifyAnchors":"","autolink":true},"server":{"port":4000,"log":false,"ip":"0.0.0.0","compress":false,"header":true},"since":2017,"favicon":"/favicon.ico","menu":{"Home":"/","Archives":"/archives/","Tags":"/tags","Categories":"/categories","Github":"https://github.com/yongyuandouneng"},"color":"Default","toc":true,"fancybox":true,"pjax":true,"copyright":{"enable":true,"license":"<a rel=\"license\" href=\"http://creativecommons.org/licenses/by-nc/4.0/\" target=\"_blank\">知识共享署名-非商业性使用 4.0 国际许可协议</a>"},"reward":{"enable":false,"qrCode":{"wechat":null,"alipay":null}},"social":{"email":"1003580893@qq.com","stack-overflow":null,"twitter":null,"facebook":null,"linkedin":null,"google":null,"github":"https://github.com/yongyuandouneng","weibo":null,"zhihu":null,"douban":null,"pocket":null,"tumblr":null,"instagram":null},"leancloud":{"app_id":null,"app_key":null},"baidu_analytics":null,"baidu_verification":null,"google_analytics":null,"google_verification":null,"changyan":{"appid":null,"appkey":null},"livere_datauid":null,"version":"2.9.0"};
 </script>
 
-    <title> 郑永能の博客 </title>
+    <title> iOS性能优化 - 郑永能の博客 </title>
   </head>
 
   <body><div id="mobile-navbar" class="mobile-navbar">
@@ -216,14 +218,12 @@
         <div class="content-wrapper">
           <div id="content" class="content">
             
-  <section id="posts" class="posts">
-    
-      
+  
   <article class="post">
     <header class="post-header">
       <h1 class="post-title">
         
-          <a class="post-link" href="/2018/02/15/iOS性能优化、卡顿检测、质量监控等知识点/">iOS性能优化</a>
+          iOS性能优化
         
       </h1>
 
@@ -238,15 +238,18 @@
 
     
     
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#iOS-官方文档"><span class="toc-text"><a href="#iOS-&#x5B98;&#x65B9;&#x6587;&#x6863;" class="headerlink" title="iOS &#x5B98;&#x65B9;&#x6587;&#x6863;"></a>iOS &#x5B98;&#x65B9;&#x6587;&#x6863;</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#iOS-性能优化相关书籍"><span class="toc-text"><a href="#iOS-&#x6027;&#x80FD;&#x4F18;&#x5316;&#x76F8;&#x5173;&#x4E66;&#x7C4D;" class="headerlink" title="iOS &#x6027;&#x80FD;&#x4F18;&#x5316;&#x76F8;&#x5173;&#x4E66;&#x7C4D;"></a>iOS &#x6027;&#x80FD;&#x4F18;&#x5316;&#x76F8;&#x5173;&#x4E66;&#x7C4D;</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Instruments-工具相关"><span class="toc-text"><a href="#Instruments-&#x5DE5;&#x5177;&#x76F8;&#x5173;" class="headerlink" title="Instruments &#x5DE5;&#x5177;&#x76F8;&#x5173;"></a>Instruments &#x5DE5;&#x5177;&#x76F8;&#x5173;</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#综合篇"><span class="toc-text"><a href="#&#x7EFC;&#x5408;&#x7BC7;" class="headerlink" title="&#x7EFC;&#x5408;&#x7BC7;"></a>&#x7EFC;&#x5408;&#x7BC7;</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#内存优化"><span class="toc-text"><a href="#&#x5185;&#x5B58;&#x4F18;&#x5316;" class="headerlink" title="&#x5185;&#x5B58;&#x4F18;&#x5316;"></a>&#x5185;&#x5B58;&#x4F18;&#x5316;</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#卡顿优化"><span class="toc-text"><a href="#&#x5361;&#x987F;&#x4F18;&#x5316;" class="headerlink" title="&#x5361;&#x987F;&#x4F18;&#x5316;"></a>&#x5361;&#x987F;&#x4F18;&#x5316;</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#布局优化"><span class="toc-text"><a href="#&#x5E03;&#x5C40;&#x4F18;&#x5316;" class="headerlink" title="&#x5E03;&#x5C40;&#x4F18;&#x5316;"></a>&#x5E03;&#x5C40;&#x4F18;&#x5316;</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#电量优化"><span class="toc-text"><a href="#&#x7535;&#x91CF;&#x4F18;&#x5316;" class="headerlink" title="&#x7535;&#x91CF;&#x4F18;&#x5316;"></a>&#x7535;&#x91CF;&#x4F18;&#x5316;</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#启动优化"><span class="toc-text"><a href="#&#x542F;&#x52A8;&#x4F18;&#x5316;" class="headerlink" title="&#x542F;&#x52A8;&#x4F18;&#x5316;"></a>&#x542F;&#x52A8;&#x4F18;&#x5316;</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#体积优化"><span class="toc-text"><a href="#&#x4F53;&#x79EF;&#x4F18;&#x5316;" class="headerlink" title="&#x4F53;&#x79EF;&#x4F18;&#x5316;"></a>&#x4F53;&#x79EF;&#x4F18;&#x5316;</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#网络优化"><span class="toc-text"><a href="#&#x7F51;&#x7EDC;&#x4F18;&#x5316;" class="headerlink" title="&#x7F51;&#x7EDC;&#x4F18;&#x5316;"></a>&#x7F51;&#x7EDC;&#x4F18;&#x5316;</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#编译优化"><span class="toc-text"><a href="#&#x7F16;&#x8BD1;&#x4F18;&#x5316;" class="headerlink" title="&#x7F16;&#x8BD1;&#x4F18;&#x5316;"></a>&#x7F16;&#x8BD1;&#x4F18;&#x5316;</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#APM"><span class="toc-text"><a href="#APM" class="headerlink" title="APM"></a>APM</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#调试-amp-Crash"><span class="toc-text"><a href="#&#x8C03;&#x8BD5;-amp-Crash" class="headerlink" title="&#x8C03;&#x8BD5; &amp; Crash"></a>&#x8C03;&#x8BD5; &amp; Crash</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#相关开源库"><span class="toc-text"><a href="#&#x76F8;&#x5173;&#x5F00;&#x6E90;&#x5E93;" class="headerlink" title="&#x76F8;&#x5173;&#x5F00;&#x6E90;&#x5E93;"></a>&#x76F8;&#x5173;&#x5F00;&#x6E90;&#x5E93;</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#网络"><span class="toc-text"><a href="#&#x7F51;&#x7EDC;" class="headerlink" title="&#x7F51;&#x7EDC;"></a>&#x7F51;&#x7EDC;</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#卡顿"><span class="toc-text"><a href="#&#x5361;&#x987F;" class="headerlink" title="&#x5361;&#x987F;"></a>&#x5361;&#x987F;</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#瘦身"><span class="toc-text"><a href="#&#x7626;&#x8EAB;" class="headerlink" title="&#x7626;&#x8EAB;"></a>&#x7626;&#x8EAB;</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#APM-1"><span class="toc-text"><a href="#APM-1" class="headerlink" title="APM"></a>APM</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#App性能优化-App瘦身"><span class="toc-text"><a href="#App&#x6027;&#x80FD;&#x4F18;&#x5316;-App&#x7626;&#x8EAB;" class="headerlink" title="App&#x6027;&#x80FD;&#x4F18;&#x5316; - App&#x7626;&#x8EAB;"></a>App&#x6027;&#x80FD;&#x4F18;&#x5316; - App&#x7626;&#x8EAB;</span></a></li></ol>
+    </div>
+  </div>
+
 
 
     <div class="post-content">
       
-        
-        
-
-        
-          <h4 id="iOS-官方文档"><a href="#iOS-官方文档" class="headerlink" title="iOS 官方文档"></a>iOS 官方文档</h4><blockquote>
+        <h4 id="iOS-官方文档"><a href="#iOS-官方文档" class="headerlink" title="iOS 官方文档"></a>iOS 官方文档</h4><blockquote>
 <p>专题内容比较多，后面细分内容会有部分重复。</p>
 <ul>
 <li><a href="https://developer.apple.com/library/content/navigation/#section=Topics&amp;topic=Performance" target="_blank" rel="noopener">Performance 专题</a> </li>
@@ -380,229 +383,69 @@
 <p><a href="https://tech.meituan.com/hertz.html" target="_blank" rel="noopener">11、移动端性能监控方案Hertz</a></p>
 <p>以上内容均来自网络，部分内容来自<a href="https://github.com/skyming/iOS-Performance-Optimization/edit/master/README.md" target="_blank" rel="noopener">这里</a>，剩下内容的是自己收集的文章。</p>
 
-        
       
     </div>
 
     
-
-    
-
-  </article>
-
-    
       
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2018/01/01/2017年个人总结/">2017年个人总结</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2018-01-01
-        </span>
-        
-        
-      </div>
-    </header>
-
-    
-    
-
-
-    <div class="post-content">
       
-        
-        
-          
-        
 
+  <div class="post-copyright">
+    <p class="copyright-item">
+      <span>原文作者: </span>
+      <a href="http://yongyuandouneng.com">郑永能</a>
+    </p>
+    <p class="copyright-item">
+      <span>原文链接: </span>
+      <a href="http://yongyuandouneng.com/2018/02/15/iOS性能优化、卡顿检测、质量监控等知识点/">http://yongyuandouneng.com/2018/02/15/iOS性能优化、卡顿检测、质量监控等知识点/</a>
+    </p>
+    <p class="copyright-item">
+      <span>许可协议: </span>
+      
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+    </p>
+  </div>
+
+
+
+      
+      
+    
+
+    
+      <footer class="post-footer">
         
-          <h2 id="说在前面"><a href="#说在前面" class="headerlink" title="说在前面"></a>说在前面</h2><p>&emsp;&emsp;一直以来都没有写博客的习惯，一直以来自己的文采很差，一直以来连在多人面前大声讲话都会紧张的我，在新的一年里确实是需要做出一些改变了。其实早在11月份左右的时候我就开始想要改变现状了。不是说我有多颓废，其实并没有。我想表达的是:我想看到不一样的我。所以我进行了多方面的尝试。11月到12月这段时间，我尝试的养起了猫猫，也尝试了投资、旅游等。</p>
-<h2 id="工作"><a href="#工作" class="headerlink" title="工作"></a>工作</h2><p>   &emsp;&emsp;从4月份加入到一个新的大家庭，非常开心，即将在这里度过一年了。在此期间，我跟同事相处的还算很融洽，把本不爱讲话的我慢慢的开朗了起来。之前我只会埋头的做工作，研究一些新技术。顶着压力同时做了好几个项目，也帮朋友解决他们自己公司的项目，因为我想让自己成长的更快。正因为这样，接触的多了，了解的东西也多了，在真正遇到问题的时候，我解决问题的思路和想法也就多了。希望在今年在公司能够和同事相处的更久融洽，配合的更好。</p>
-          <div class="read-more">
-            <a href="/2018/01/01/2017年个人总结/" class="read-more-link">阅读更多</a>
+          <div class="post-tags">
+            
+              <a href="/tags/iOS性能优化/">iOS性能优化</a>
+            
           </div>
         
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-    
-      
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2017/12/30/iOS脚本自动打包/">iOS脚本自动打包</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2017-12-30
-        </span>
         
         
-      </div>
-    </header>
-
+  <nav class="post-nav">
     
     
-
-
-    <div class="post-content">
-      
-        
-        
-          
-        
-
-        
-          <p>#####################  如何使用  #####################</p>
-<p>#配置好下面的配置信息</p>
-<p>#把此文件复制到项目</p>
-<p>#cd到项目，把此文件拖到命令行执行。</p>
-<p>还有一个 IPA.plist 用了配置打包信息</p>
-<p>这个工具使用了一年了，整理好发上来，具体请看<a href="https://github.com/yongyuandouneng/YNAutomaticPackage" target="_blank" rel="noopener">Demo</a>，解压出来即可使用。<br>
-          <div class="read-more">
-            <a href="/2017/12/30/iOS脚本自动打包/" class="read-more-link">阅读更多</a>
-          </div>
-        
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-    
-      
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2017/12/16/整理一些简书零碎收集的文章/">整理一些简书零碎收集的文章</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2017-12-16
-        </span>
-        
-        
-      </div>
-    </header>
-
-    
-    
-
-
-    <div class="post-content">
-      
-        
-        
-          
-        
-
-        
-          <h2 id="本博客搭建教程"><a href="#本博客搭建教程" class="headerlink" title="本博客搭建教程"></a>本博客搭建教程</h2><p><a href="http://blog.csdn.net/ainuser/article/details/77609180" target="_blank" rel="noopener">hexo+github搭建个人博客(超详细教程)</a></p>
-<h2 id="iOS多线程"><a href="#iOS多线程" class="headerlink" title="iOS多线程"></a>iOS多线程</h2><p><a href="http://www.jianshu.com/p/b7f4b0afd1cd" target="_blank" rel="noopener">NSOperation(重要)具体实现</a><br><a href="http://blog.csdn.net/u011219941/article/details/50250727" target="_blank" rel="noopener">关于GCD开发的一些事儿</a><br><a href="http://www.cnblogs.com/ziyi--caolu/p/4900650.html" target="_blank" rel="noopener">iOS开发：深入理解GCD-第二篇（dispatch_group、dispatch_barrier、基于线程安全的多读单写）</a></p>
-<h2 id="离线缓存方面"><a href="#离线缓存方面" class="headerlink" title="离线缓存方面"></a>离线缓存方面</h2><p><a href="http://blog.sina.com.cn/s/blog_6291e42d0102v0hf.html" target="_blank" rel="noopener">关于离线缓存webView的新方法NSURLProtocol</a><br><a href="http://www.15yan.com/story/45toOUzFGlr/" target="_blank" rel="noopener">Objective-C中的缓存-NSCache介绍</a></p>
-<h2 id="界面"><a href="#界面" class="headerlink" title="界面"></a>界面</h2><p><a href="http://blog.csdn.net/mhw19901119/article/details/9083293" target="_blank" rel="noopener">-iOS-UITableviewCell的重用机制</a><br><a href="http://jailbreak.kuaiyong.com/edu/1467.html" target="_blank" rel="noopener">搞Reveal时搞出了，白苹果，咋办?</a><br><a href="http://www.jianshu.com/p/abe815018b2a" target="_blank" rel="noopener">iOS-设置视图半透明而子控件不透明</a><br><a href="http://www.cnblogs.com/ziyi--caolu/p/4803756.html" target="_blank" rel="noopener">iOS开发：一个瀑布流的设计与实现（已实现缓存池功能，该功能使得瀑布流cell可以循环利用）</a><br><a href="http://www.cnblogs.com/ilfmonday/p/iphoneAdapt.html" target="_blank" rel="noopener">iPhone-适配心得</a><br><a href="http://blog.csdn.net/phunxm/article/details/42174937" target="_blank" rel="noopener">iPhone屏幕尺寸、分辨率及适配</a><br>
-          <div class="read-more">
-            <a href="/2017/12/16/整理一些简书零碎收集的文章/" class="read-more-link">阅读更多</a>
-          </div>
-        
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-    
-      
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2017/12/16/整理一些iOS个人博客/">收集的博客</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2017-12-16
-        </span>
-        
-        
-      </div>
-    </header>
-
-    
-    
-
-
-    <div class="post-content">
-      
-        
-        
-          
-        
-
-        
-          <p>记录一些常看的博客，排名不分先后。</p>
-<p><a href="https://segmentfault.com/u/curiousity" target="_blank" rel="noopener">https://segmentfault.com/u/curiousity</a> 孙</p>
-<p><a href="http://sindrilin.com" target="_blank" rel="noopener">http://sindrilin.com</a> 骑</p>
-<p><a href="https://xiuchundao.me/archives" target="_blank" rel="noopener">https://xiuchundao.me/archives</a> 绣春刀</p>
-<p><a href="http://maxwellpro.cn" target="_blank" rel="noopener">http://maxwellpro.cn</a>   maxwellpro</p>
-<p><a href="http://blog.devtang.com/archives/" target="_blank" rel="noopener">http://blog.devtang.com/archives/</a>   唐巧的博客</p>
-<p><a href="https://lvwenhan.com/sort/ios" target="_blank" rel="noopener">https://lvwenhan.com/sort/ios</a>  岁寒</p>
-<p><a href="http://www.cnblogs.com/mjios" target="_blank" rel="noopener">http://www.cnblogs.com/mjios</a>  M了个J</p>
-<p><a href="http://www.cnblogs.com/ludashi/" target="_blank" rel="noopener">http://www.cnblogs.com/ludashi/</a>   青玉伏案</p>
-<p><a href="http://blog.leichunfeng.com" target="_blank" rel="noopener">http://blog.leichunfeng.com</a>  雷纯峰</p>
-<p><a href="http://tech.yunyingxbs.com" target="_blank" rel="noopener">http://tech.yunyingxbs.com</a>    标哥的技术博客</p>
-<p><a href="http://valiantcat.com/archives/" target="_blank" rel="noopener">http://valiantcat.com/archives/</a>   寒哥的博客</p>
-<p><a href="http://draveness.me" target="_blank" rel="noopener">http://draveness.me</a>     draveness<br>
-          <div class="read-more">
-            <a href="/2017/12/16/整理一些iOS个人博客/" class="read-more-link">阅读更多</a>
-          </div>
-        
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-    
-  </section>
-
-  
-  <nav class="pagination">
-    
+      <a class="next" href="/2018/01/01/2017年个人总结/">
+        <span class="next-text nav-default">2017年个人总结</span>
+        <span class="prev-text nav-mobile">下一篇</span>
+        <i class="iconfont icon-right"></i>
+      </a>
     
   </nav>
 
+      </footer>
+    
+
+  </article>
+
 
           </div>
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
       </main>
@@ -683,6 +526,11 @@
     </div>
 
     
+  
+  
+
+  
+
 
 
     
