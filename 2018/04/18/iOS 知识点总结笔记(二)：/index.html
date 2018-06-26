@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+
+  <meta name="description" content="iOS知识点总结笔记(二)"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="郑永能の博客">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.9.0" />
+
+
+
+<link rel="canonical" href="http://yongyuandouneng.com/2018/04/18/iOS 知识点总结笔记(二)：/"/>
+
+
+
+  <link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css" />
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/lib/nprogress/nprogress.min.css" />
+
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.9.0" />
+
+
+
+  
+
+
+
+  <script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+
+
+
+
+
+<script>
+  window.config = {"title":"郑永能の博客","subtitle":"不积跬步，无以至千里；不积小流，无以成江海。","description":"时间都去哪儿了","author":"郑永能","language":"zh-Hans","timezone":"Asia/Shanghai","url":"http://yongyuandouneng.com","root":"/","permalink":":year/:month/:day/:title/","permalink_defaults":null,"source_dir":"source","public_dir":"public","tag_dir":"tags","archive_dir":"archives","category_dir":"categories","code_dir":"downloads/code","i18n_dir":":lang","skip_render":null,"new_post_name":":title.md","default_layout":"post","titlecase":false,"external_link":true,"filename_case":0,"render_drafts":false,"post_asset_folder":false,"relative_link":false,"future":true,"highlight":{"enable":true,"auto_detect":true,"line_number":true,"tab_replace":null,"first_line_number":"always1"},"default_category":"uncategorized","category_map":null,"tag_map":null,"date_format":"YYYY-MM-DD","time_format":"HH:mm:ss","per_page":10,"pagination_dir":"page","theme":"even","deploy":{"type":"git","repository":"https://github.com/yongyuandouneng/yongyuandouneng.github.io.git","branch":"master"},"ignore":[],"index_generator":{"per_page":10,"order_by":"-date","path":""},"disqus_shortname":null,"archive_generator":{"per_page":10,"yearly":true,"monthly":true,"daily":false},"category_generator":{"per_page":10},"feed":{"type":"atom","limit":20,"hub":"","content":true,"content_limit":140,"content_limit_delim":"","path":"atom.xml"},"tag_generator":{"per_page":10},"marked":{"gfm":true,"pedantic":false,"sanitize":false,"tables":true,"breaks":true,"smartLists":true,"smartypants":true,"modifyAnchors":"","autolink":true},"server":{"port":4000,"log":false,"ip":"0.0.0.0","compress":false,"header":true},"since":2017,"favicon":"/favicon.ico","menu":{"Home":"/","Archives":"/archives/","Tags":"/tags","Categories":"/categories","Github":"https://github.com/yongyuandouneng"},"color":"Default","toc":true,"fancybox":true,"pjax":true,"copyright":{"enable":true,"license":"<a rel=\"license\" href=\"http://creativecommons.org/licenses/by-nc/4.0/\" target=\"_blank\">知识共享署名-非商业性使用 4.0 国际许可协议</a>"},"reward":{"enable":false,"qrCode":{"wechat":null,"alipay":null}},"social":{"email":"1003580893@qq.com","stack-overflow":null,"twitter":null,"facebook":null,"linkedin":null,"google":null,"github":"https://github.com/yongyuandouneng","weibo":null,"zhihu":null,"douban":null,"pocket":null,"tumblr":null,"instagram":null},"leancloud":{"app_id":null,"app_key":null},"baidu_analytics":null,"baidu_verification":null,"google_analytics":null,"google_verification":null,"changyan":{"appid":null,"appkey":null},"livere_datauid":null,"version":"2.9.0"};
+</script>
+
+    <title> iOS知识点总结笔记(二) - 郑永能の博客 </title>
+  </head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">郑永能の博客</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+      <a href="/">
+        <li class="mobile-menu-item">
+          
+          
+            首页
+          
+        </li>
+      </a>
+    
+      <a href="/archives/">
+        <li class="mobile-menu-item">
+          
+          
+            归档
+          
+        </li>
+      </a>
+    
+      <a href="/tags">
+        <li class="mobile-menu-item">
+          
+          
+            标签
+          
+        </li>
+      </a>
+    
+      <a href="/categories">
+        <li class="mobile-menu-item">
+          
+          
+            分类
+          
+        </li>
+      </a>
+    
+      <a href="https://github.com/yongyuandouneng">
+        <li class="mobile-menu-item">
+          
+          
+            Github
+          
+        </li>
+      </a>
+    
+  </ul>
+</nav>
+
+    <div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">郑永能の博客</a>
+</div>
+
+<nav class="site-navbar">
+  
+    <ul id="menu" class="menu">
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/">
+            
+            
+              首页
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            
+            
+              归档
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/tags">
+            
+            
+              标签
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/categories">
+            
+            
+              分类
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="https://github.com/yongyuandouneng">
+            
+            
+              Github
+            
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          iOS知识点总结笔记(二)
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2018-04-18
+        </span>
+        
+          <div class="post-category">
+            
+              <a href="/categories/iOS知识点总结/">iOS知识点总结</a>
+            
+          </div>
+        
+        
+      </div>
+    </header>
+
+    
+    
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#干货来袭"><span class="toc-text"><a href="#&#x5E72;&#x8D27;&#x6765;&#x88AD;" class="headerlink" title="&#x5E72;&#x8D27;&#x6765;&#x88AD;~"></a>&#x5E72;&#x8D27;&#x6765;&#x88AD;~</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-initialize-与-load-、-Block、内存管理"><span class="toc-text"><a href="#1-initialize-&#x4E0E;-load-&#x3001;-Block&#x3001;&#x5185;&#x5B58;&#x7BA1;&#x7406;" class="headerlink" title="1. initialize &#x4E0E; load &#x3001; Block&#x3001;&#x5185;&#x5B58;&#x7BA1;&#x7406;"></a>1. initialize &#x4E0E; load &#x3001; Block&#x3001;&#x5185;&#x5B58;&#x7BA1;&#x7406;</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-线程、多线程、GCD、NSOperationQueue"><span class="toc-text"><a href="#2-&#x7EBF;&#x7A0B;&#x3001;&#x591A;&#x7EBF;&#x7A0B;&#x3001;GCD&#x3001;NSOperationQueue" class="headerlink" title="2. &#x7EBF;&#x7A0B;&#x3001;&#x591A;&#x7EBF;&#x7A0B;&#x3001;GCD&#x3001;NSOperationQueue"></a>2. &#x7EBF;&#x7A0B;&#x3001;&#x591A;&#x7EBF;&#x7A0B;&#x3001;GCD&#x3001;NSOperationQueue</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-Runtime"><span class="toc-text"><a href="#3-Runtime" class="headerlink" title="3. Runtime"></a>3. Runtime</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-RunLoop-、响应者链条"><span class="toc-text"><a href="#4-RunLoop-&#x3001;&#x54CD;&#x5E94;&#x8005;&#x94FE;&#x6761;" class="headerlink" title="4. RunLoop &#x3001;&#x54CD;&#x5E94;&#x8005;&#x94FE;&#x6761;"></a>4. RunLoop &#x3001;&#x54CD;&#x5E94;&#x8005;&#x94FE;&#x6761;</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-Objective-C-Associated-Objects"><span class="toc-text"><a href="#5-Objective-C-Associated-Objects" class="headerlink" title="5. Objective-C Associated Objects"></a>5. Objective-C Associated Objects</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-Objective-C-Category"><span class="toc-text"><a href="#6-Objective-C-Category" class="headerlink" title="6. Objective-C Category"></a>6. Objective-C Category</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-Objective-C-Autorelease-Pool"><span class="toc-text"><a href="#7-Objective-C-Autorelease-Pool" class="headerlink" title="7. Objective-C Autorelease Pool"></a>7. Objective-C Autorelease Pool</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-iOS-中的锁"><span class="toc-text"><a href="#8-iOS-&#x4E2D;&#x7684;&#x9501;" class="headerlink" title="8. iOS &#x4E2D;&#x7684;&#x9501;"></a>8. iOS &#x4E2D;&#x7684;&#x9501;</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#9-ReactiveCocoa"><span class="toc-text"><a href="#9-ReactiveCocoa" class="headerlink" title="9. ReactiveCocoa"></a>9. ReactiveCocoa</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#10-MVC、MVVM、RAC-MVVM"><span class="toc-text"><a href="#10-MVC&#x3001;MVVM&#x3001;RAC-MVVM" class="headerlink" title="10. MVC&#x3001;MVVM&#x3001;RAC-MVVM"></a>10. MVC&#x3001;MVVM&#x3001;RAC-MVVM</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#11-组件化系列"><span class="toc-text"><a href="#11-&#x7EC4;&#x4EF6;&#x5316;&#x7CFB;&#x5217;" class="headerlink" title="11.&#x7EC4;&#x4EF6;&#x5316;&#x7CFB;&#x5217;"></a>11.&#x7EC4;&#x4EF6;&#x5316;&#x7CFB;&#x5217;</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#12-源码探索系列"><span class="toc-text"><a href="#12-&#x6E90;&#x7801;&#x63A2;&#x7D22;&#x7CFB;&#x5217;" class="headerlink" title="12.&#x6E90;&#x7801;&#x63A2;&#x7D22;&#x7CFB;&#x5217;"></a>12.&#x6E90;&#x7801;&#x63A2;&#x7D22;&#x7CFB;&#x5217;</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#13-Mach-O-程序问题"><span class="toc-text"><a href="#13-Mach-O-&#x7A0B;&#x5E8F;&#x95EE;&#x9898;" class="headerlink" title="13.Mach-O  - &#x7A0B;&#x5E8F;&#x95EE;&#x9898;"></a>13.Mach-O  - &#x7A0B;&#x5E8F;&#x95EE;&#x9898;</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#14-CocoaPod"><span class="toc-text"><a href="#14-CocoaPod" class="headerlink" title="14.CocoaPod"></a>14.CocoaPod</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#16-埋点系列"><span class="toc-text"><a href="#16-&#x57CB;&#x70B9;&#x7CFB;&#x5217;" class="headerlink" title="16.&#x57CB;&#x70B9;&#x7CFB;&#x5217;"></a>16.&#x57CB;&#x70B9;&#x7CFB;&#x5217;</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#16-iOS-开发小技巧"><span class="toc-text"><a href="#16-iOS-&#x5F00;&#x53D1;&#x5C0F;&#x6280;&#x5DE7;" class="headerlink" title="16. iOS &#x5F00;&#x53D1;&#x5C0F;&#x6280;&#x5DE7;"></a>16. iOS &#x5F00;&#x53D1;&#x5C0F;&#x6280;&#x5DE7;</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#数据库"><span class="toc-text"><a href="#&#x6570;&#x636E;&#x5E93;" class="headerlink" title="&#x6570;&#x636E;&#x5E93;"></a>&#x6570;&#x636E;&#x5E93;</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#LLVM"><span class="toc-text"><a href="#LLVM" class="headerlink" title="LLVM"></a>LLVM</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#书籍"><span class="toc-text"><a href="#&#x4E66;&#x7C4D;" class="headerlink" title="&#x4E66;&#x7C4D;:"></a>&#x4E66;&#x7C4D;:</span></a></li></ol></li></ol>
+    </div>
+  </div>
+
+
+
+    <div class="post-content">
+      
+        <h3 id="干货来袭"><a href="#干货来袭" class="headerlink" title="干货来袭~"></a>干货来袭~</h3><h4 id="1-initialize-与-load-、-Block、内存管理"><a href="#1-initialize-与-load-、-Block、内存管理" class="headerlink" title="1. initialize 与 load 、 Block、内存管理"></a>1. initialize 与 load 、 Block、内存管理</h4><p><a href="http://blog.leichunfeng.com/blog/2015/05/02/objective-c-plus-load-vs-plus-initialize/" target="_blank" rel="noopener">1、Objective-C +load vs +initialize</a></p>
+<p><a href="https://github.com/Desgard/iOS-Source-Probe" target="_blank" rel="noopener">2、load 方法全程跟踪</a></p>
+<p><a href="https://juejin.im/post/57ccac1ac4c97100543b4761" target="_blank" rel="noopener">3、深入研究Block用weakSelf、strongSelf、@weakify、@strongify解决循环引用</a></p>
+<p><a href="https://juejin.im/post/57ccab0ba22b9d006ba26de1" target="_blank" rel="noopener">4、深入研究Block捕获外部变量和__block实现原理</a></p>
+<p><a href="http://www.desgard.com/weak/" target="_blank" rel="noopener">5、weak 弱引用的实现方式</a></p>
+<p><a href="http://blog.sunnyxx.com/2014/10/15/behind-autorelease/" target="_blank" rel="noopener">6、黑幕背后的Autorelease</a></p>
+<p><a href="http://www.cocoachina.com/ios/20170328/18962.html" target="_blank" rel="noopener">7、iOS 底层解析weak的实现原理（包含weak对象的初始化，引用，释放的分析）</a><br><a id="more"></a></p>
+<h4 id="2-线程、多线程、GCD、NSOperationQueue"><a href="#2-线程、多线程、GCD、NSOperationQueue" class="headerlink" title="2. 线程、多线程、GCD、NSOperationQueue"></a>2. 线程、多线程、GCD、NSOperationQueue</h4><p><a href="https://www.jianshu.com/p/7649fad15cdb" target="_blank" rel="noopener">1、iOS多线程全套：线程生命周期，多线程的四种解决方案，线程安全问题，GCD的使用，NSOperation的使用</a></p>
+<p><a href="https://github.com/ming1016/study/wiki/细说GCD（Grand-Central-Dispatch）如何用" target="_blank" rel="noopener">2、细说GCD（Grand Central Dispatch）如何用</a></p>
+<p><a href="https://github.com/ming1016/study/wiki/iOS并发编程" target="_blank" rel="noopener">3、iOS并发编程</a></p>
+<p><a href="https://bestswifter.com/deep-gcd/?spm=a2c4e.11153940.blogcont61328.5.57f76c9c87PyYp" target="_blank" rel="noopener">2、深入理解GCD</a></p>
+<h4 id="3-Runtime"><a href="#3-Runtime" class="headerlink" title="3. Runtime"></a>3. Runtime</h4><p><a href="http://www.desgard.com/isa/" target="_blank" rel="noopener">1、用 isa 承载对象的类信息程</a></p>
+<p><a href="http://www.desgard.com/objc_msgSend1/" target="_blank" rel="noopener">2、objc_msgSend消息传递学习笔记 - 对象方法消息传递流程</a></p>
+<p><a href="https://juejin.im/post/57ded1650bd1d00057f6da49" target="_blank" rel="noopener">3、神经病院Objective-C Runtime入院第一天—isa和Class</a></p>
+<p><a href="https://juejin.im/post/57e7e10a128fe100570d876d" target="_blank" rel="noopener">4、神经病院Objective-C Runtime住院第二天—消息发送与转发</a></p>
+<p><a href="https://juejin.im/post/57f269568ac2470058892f97" target="_blank" rel="noopener">5、神经病院 Objective-C Runtime 出院第三天——如何正确使用 Runtime</a></p>
+<p><a href="https://segmentfault.com/a/1190000009346559" target="_blank" rel="noopener">6、个人对于super的调用过程中，一些不一样的理解</a></p>
+<p><a href="https://blog.csdn.net/u011619283/article/details/54582204" target="_blank" rel="noopener">7、Objective-C中的消息发送总结</a></p>
+<h4 id="4-RunLoop-、响应者链条"><a href="#4-RunLoop-、响应者链条" class="headerlink" title="4. RunLoop 、响应者链条"></a>4. RunLoop 、响应者链条</h4><p><a href="https://blog.ibireme.com/2015/05/18/runloop/" target="_blank" rel="noopener">1、深入理解RunLoop</a></p>
+<p><a href="https://juejin.im/entry/582183bc8ac247004f1d5647" target="_blank" rel="noopener">2、源码看 runLoop</a></p>
+<p><a href="https://juejin.im/post/5aca2b0a6fb9a028d700e1f8" target="_blank" rel="noopener">3、iOS RunLoop详解</a></p>
+<p><a href="https://blog.csdn.net/weiwandaixu_/article/details/79727899" target="_blank" rel="noopener">4、iOS刨根问底-深入理解RunLoop</a></p>
+<p><a href="https://blog.csdn.net/u011619283/article/details/53765643" target="_blank" rel="noopener">5、RunLoop总结：RunLoop基础知识</a></p>
+<p><a href="https://blog.csdn.net/u011619283/article/details/53783650" target="_blank" rel="noopener">6、RunLoop总结：RunLoop 与GCD 、Autorelease Pool之间的关系</a></p>
+<p><a href="https://blog.csdn.net/u011619283/article/details/53433243" target="_blank" rel="noopener">7、RunLoop 总结：RunLoop的应用场景（一）</a></p>
+<p><a href="https://blog.csdn.net/u011619283/article/details/53436907" target="_blank" rel="noopener">8、RunLoop 总结：RunLoop的应用场景（二）</a></p>
+<p><a href="https://blog.csdn.net/u011619283/article/details/53483965" target="_blank" rel="noopener">9、RunLoop总结：RunLoop的应用场景（三）</a></p>
+<p><a href="https://blog.csdn.net/u011619283/article/details/53666009" target="_blank" rel="noopener">10、RunLoop总结：RunLoop的应用场景（四）</a></p>
+<p><a href="https://blog.csdn.net/u011619283/article/details/53673255" target="_blank" rel="noopener">11、RunLoop总结：RunLoop的应用场景（五）</a></p>
+<p><a href="https://www.aliyun.com/jiaocheng/372527.html" target="_blank" rel="noopener">12、runLoop的终极大杀器</a></p>
+<p><a href="https://www.jianshu.com/p/2e074db792ba" target="_blank" rel="noopener">史上最详细的iOS之事件的传递和响应机制-原理篇</a></p>
+<h4 id="5-Objective-C-Associated-Objects"><a href="#5-Objective-C-Associated-Objects" class="headerlink" title="5. Objective-C Associated Objects"></a>5. Objective-C Associated Objects</h4><p><a href="http://blog.leichunfeng.com/blog/2015/06/26/objective-c-associated-objects-implementation-principle/" target="_blank" rel="noopener">1、Objective-C Associated Objects 的实现原理</a></p>
+<p><a href="http://www.desgard.com/Associated-Objects/" target="_blank" rel="noopener">2、浅谈Associated Objects</a></p>
+<h4 id="6-Objective-C-Category"><a href="#6-Objective-C-Category" class="headerlink" title="6. Objective-C Category"></a>6. Objective-C Category</h4><p><a href="http://blog.leichunfeng.com/blog/2015/05/18/objective-c-category-implementation-principle/" target="_blank" rel="noopener">Objective-C Category 的实现原理</a></p>
+<h4 id="7-Objective-C-Autorelease-Pool"><a href="#7-Objective-C-Autorelease-Pool" class="headerlink" title="7. Objective-C Autorelease Pool"></a>7. Objective-C Autorelease Pool</h4><p><a href="http://blog.leichunfeng.com/blog/2015/05/31/objective-c-autorelease-pool-implementation-principle/" target="_blank" rel="noopener">1、Objective-C Autorelease Pool 的实现原理</a></p>
+<p><a href="http://blog.sunnyxx.com/2014/10/15/behind-autorelease/" target="_blank" rel="noopener">2、黑幕背后的Autorelease</a></p>
+<h4 id="8-iOS-中的锁"><a href="#8-iOS-中的锁" class="headerlink" title="8. iOS 中的锁"></a>8. iOS 中的锁</h4><p><a href="http://blog.csdn.net/liupinghui/article/details/67637830" target="_blank" rel="noopener">1、iOS 各种锁机制</a></p>
+<p><a href="https://www.jianshu.com/p/8b8a01dd6356" target="_blank" rel="noopener">2、iOS 开发中的八种锁（Lock）</a></p>
+<p><a href="https://www.jianshu.com/p/ddbe44064ca4" target="_blank" rel="noopener">3、iOS 常见知识点（三）：Lock</a></p>
+<p><a href="https://bestswifter.com/ios-lock/" target="_blank" rel="noopener">4、深入理解 iOS 开发中的锁</a></p>
+<p><a href="https://blog.ibireme.com/2016/01/16/spinlock_is_unsafe_in_ios/" target="_blank" rel="noopener">5、不再安全的 OSSpinLock</a></p>
+<p><a href="https://www.jianshu.com/p/a33959324cc7" target="_blank" rel="noopener">6、iOS 锁的简单实现与总结</a></p>
+<p><a href="https://www.cnblogs.com/huayuan320/p/6217738.html" target="_blank" rel="noopener">7、iOS开发中多线程间关于锁的使用</a></p>
+<p><a href="http://blog.csdn.net/deft_mkjing/article/details/79513500" target="_blank" rel="noopener">8、iOS开发中自旋和互斥锁的理解以及所有锁的性能比较</a></p>
+<h4 id="9-ReactiveCocoa"><a href="#9-ReactiveCocoa" class="headerlink" title="9. ReactiveCocoa"></a>9. ReactiveCocoa</h4><p><a href="https://ming1016.github.io/2016/05/30/what-learn-from-reactivecocoa/" target="_blank" rel="noopener">1、从 ReactiveCocoa 中能学到什么？不用此库也能学以致用</a></p>
+<p><a href="https://ming1016.github.io/2016/08/09/how-to-use-reactivecocoa/" target="_blank" rel="noopener">2、iOS函数响应式编程以及ReactiveCocoa的使用</a></p>
+<p><a href="https://ming1016.github.io/2016/09/02/develop-rss-reader/" target="_blank" rel="noopener">3、使用ReactiveCocoa开发RSS阅读器</a></p>
+<h4 id="10-MVC、MVVM、RAC-MVVM"><a href="#10-MVC、MVVM、RAC-MVVM" class="headerlink" title="10. MVC、MVVM、RAC-MVVM"></a>10. MVC、MVVM、RAC-MVVM</h4><h4 id="11-组件化系列"><a href="#11-组件化系列" class="headerlink" title="11.组件化系列"></a>11.组件化系列</h4><p><a href="https://www.jianshu.com/p/568e875abd48" target="_blank" rel="noopener">1、iOS组件化实践(一)：简介</a></p>
+<p><a href="https://www.jianshu.com/p/824d4227e123" target="_blank" rel="noopener">2、iOS组件化实践(二)：准备</a></p>
+<p><a href="https://www.jianshu.com/p/0a7f3c0b4194" target="_blank" rel="noopener">3、iOS组件化实践(三)：实施</a></p>
+<p><a href="https://link.jianshu.com/?t=https://blog.cnbluebox.com/blog/2015/11/28/module-and-decoupling/" target="_blank" rel="noopener">4、念纪-模块化与解耦</a></p>
+<p><a href="https://link.jianshu.com/?t=http://limboy.me/tech/2016/03/10/mgj-components.html" target="_blank" rel="noopener">5、limboy-蘑菇街组件化之路</a></p>
+<p><a href="https://link.jianshu.com/?t=http://limboy.me/tech/2016/03/14/mgj-components-continued.html" target="_blank" rel="noopener">6、limboy-蘑菇街组件化之路-续</a></p>
+<p><a href="https://link.jianshu.com/?t=http://casatwy.com/iOS-Modulization.html" target="_blank" rel="noopener">7、Casa Taloyum-iOS应用架构谈-组件化方案</a></p>
+<p><a href="https://link.jianshu.com/?t=http://skyline75489.github.io/post/2016-3-16_ios_module_design.html" target="_blank" rel="noopener">8、Skyline75489-浅析iOS应用组件化设计</a></p>
+<p><a href="https://www.jianshu.com/p/afb9b52143d4" target="_blank" rel="noopener">9、philon-iOS组件化思路-大神博客研读和思考</a></p>
+<p><a href="https://www.jianshu.com/p/196f66d31543" target="_blank" rel="noopener">10、philon-iOS组件化实践方案-LDBusMediator练就</a></p>
+<p><a href="https://link.jianshu.com/?t=http://blog.cnbang.net/tech/3080/" target="_blank" rel="noopener">11、bang-iOS组件化方案探索</a></p>
+<p><a href="https://link.jianshu.com/?t=http://weibo.com/ttarticle/p/show?id=2309404032668823108689" target="_blank" rel="noopener">12、携程移动端架构演进与优化之路</a></p>
+<p><a href="https://link.jianshu.com/?t=http://www.cnblogs.com/oc-bowen/p/5885476.html" target="_blank" rel="noopener">13、iOS-组件化架构漫谈</a></p>
+<p><a href="https://juejin.im/post/5a620cf5f265da3e36415764" target="_blank" rel="noopener">14、蜂鸟商家版 iOS 组件化 / 模块化实践总结</a></p>
+<p><a href="https://link.juejin.im/?target=https%3A%2F%2Fwww.jianshu.com%2Fp%2F79e4df63f31f" target="_blank" rel="noopener">15、谈谈我的理解-组件化/模块化</a></p>
+<p><a href="https://link.juejin.im/?target=http%3A%2F%2Flincode.github.io%2FModularity" target="_blank" rel="noopener">16、豆瓣App的模块化实践</a></p>
+<p><a href="https://link.juejin.im/?target=http%3A%2F%2Fwww.infoq.com%2Fcn%2Farticles%2Fthe-road-of-mobile-tmall-decoupling" target="_blank" rel="noopener">17、手机天猫解耦之路</a></p>
+<p><a href="https://link.juejin.im/?target=http%3A%2F%2Fwww.infoq.com%2Fcn%2Farticles%2Fjd-ios-component-management" target="_blank" rel="noopener">18、京东iOS客户端组件管理实践</a></p>
+<p><a href="https://mp.weixin.qq.com/s/wFL7oeAJY4FKnhBSpSBQaQ" target="_blank" rel="noopener">19、爱奇艺组件化之路</a></p>
+<h4 id="12-源码探索系列"><a href="#12-源码探索系列" class="headerlink" title="12.源码探索系列"></a>12.源码探索系列</h4><h4 id="13-Mach-O-程序问题"><a href="#13-Mach-O-程序问题" class="headerlink" title="13.Mach-O  - 程序问题"></a>13.Mach-O  - 程序问题</h4><p><a href="http://www.desgard.com/iosre-1/" target="_blank" rel="noopener">1、Mach-O 文件格式探索</a></p>
+<p><a href="http://blog.sunnyxx.com/2014/08/30/objc-pre-main/" target="_blank" rel="noopener">2、iOS 程序 main 函数之前发生了什么</a></p>
+<p><a href="https://ming1016.github.io/2017/05/27/slides-of-learn-what-interesting-things-you-can-do-with-iOS-compilation/" target="_blank" rel="noopener">3、atSwift大会上分享《学习iOS编译原理能做哪些有意思的事情》的 Slides</a></p>
+<p><a href="http://oncenote.com/2015/06/01/How-App-Launch/" target="_blank" rel="noopener">4、由App的启动说起</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/24858664" target="_blank" rel="noopener">5、Mach-O文件格式</a></p>
+<p><a href="https://makezl.github.io/2016/06/27/dylib/" target="_blank" rel="noopener">6、dylib浅析</a></p>
+<p><a href="http://satanwoo.github.io/2017/06/13/Macho-1/" target="_blank" rel="noopener">7、深入剖析Macho (1)</a></p>
+<p><a href="http://blog.tingyun.com/web/article/detail/1341?spm=5176.100239.blogcont64288.7.IuEYnv" target="_blank" rel="noopener">8、iOS系统分析（二）Mach-O二进制文件解析</a></p>
+<h4 id="14-CocoaPod"><a href="#14-CocoaPod" class="headerlink" title="14.CocoaPod"></a>14.CocoaPod</h4><p><a href="https://twitter.com/intent/tweet?text=细聊%20Cocoapods%20与%20Xcode%20工程配置%20»&amp;hashtags=&amp;url=https://bestswifter.com/cocoapods/" target="_blank" rel="noopener">1、细聊 Cocoapods 与 Xcode 工程配置</a></p>
+<h4 id="16-埋点系列"><a href="#16-埋点系列" class="headerlink" title="16.埋点系列"></a>16.埋点系列</h4><p><a href="https://www.jianshu.com/p/69ce01e15042" target="_blank" rel="noopener">1、iOS无埋点数据SDK实践之路</a></p>
+<p><a href="https://www.jianshu.com/p/0e1f2d357e39" target="_blank" rel="noopener">2、iOS无埋点SDK 之 RN页面的数据收集</a></p>
+<p><a href="https://www.jianshu.com/p/5f16e1de6d5a" target="_blank" rel="noopener">3、iOS无埋点数据SDK的整体设计与技术实现</a></p>
+<p><a href="https://www.jianshu.com/p/9b279c2b1f7d?from=timeline&amp;isappinstalled=0" target="_blank" rel="noopener">4、iOS 无埋点技术实现</a></p>
+<h4 id="16-iOS-开发小技巧"><a href="#16-iOS-开发小技巧" class="headerlink" title="16. iOS 开发小技巧"></a>16. iOS 开发小技巧</h4><p><a href="http://blog.sunnyxx.com/2014/04/30/ios_iterator/" target="_blank" rel="noopener">1、iOS 中集合遍历方法的比较和技巧</a></p>
+<p><a href="https://ming1016.github.io/archives/page/3/" target="_blank" rel="noopener">2、竭尽全力的去解耦的一次实践，封装一个TableView和一些功能组合的控件</a></p>
+<p><a href="http://awhisper.github.io/2017/09/02/universallink/" target="_blank" rel="noopener">3、Universal Link 前端部署采坑记</a></p>
+<h4 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h4><p><a href="http://www.cocoachina.com/ios/20161103/17935.html" target="_blank" rel="noopener">1、Realm数据库 从入门到“放弃”</a></p>
+<h4 id="LLVM"><a href="#LLVM" class="headerlink" title="LLVM"></a>LLVM</h4><p><a href="https://ming1016.github.io/2017/03/01/deeply-analyse-llvm/" target="_blank" rel="noopener">1、深入剖析 iOS 编译 Clang / LLVM</a></p>
+<p><a href="https://ming1016.github.io/2017/04/01/slides-of-deeply-analyse-llvm/" target="_blank" rel="noopener">2、深入剖析 iOS 编译 Clang / LLVM 直播的 Slides</a></p>
+<h4 id="书籍"><a href="#书籍" class="headerlink" title="书籍:"></a>书籍:</h4><p>1、iOS测试指南</p>
+<p>2、程序员的自我修养–链接、装载与库</p>
+<p>3、剑指offer</p>
+<p>4、链接器和加载器</p>
+<p>5、深入理解计算机系统</p>
+<p>6、数据结构与算法分析：C语言</p>
+<p>7、Effective Objective-C 2.0  编写高质量iOS与OS X代码的52个有效方</p>
+<p>8、Objective-C高级编程 iOS与OS X多线程和内存管理</p>
+
+      
+    </div>
+
+    
+      
+      
+
+  <div class="post-copyright">
+    <p class="copyright-item">
+      <span>原文作者: </span>
+      <a href="http://yongyuandouneng.com">郑永能</a>
+    </p>
+    <p class="copyright-item">
+      <span>原文链接: </span>
+      <a href="http://yongyuandouneng.com/2018/04/18/iOS 知识点总结笔记(二)：/">http://yongyuandouneng.com/2018/04/18/iOS 知识点总结笔记(二)：/</a>
+    </p>
+    <p class="copyright-item">
+      <span>许可协议: </span>
+      
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+    </p>
+  </div>
+
+
+
+      
+      
+    
+
+    
+      <footer class="post-footer">
+        
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/2018/05/21/iOS 知识点总结笔记(三)：/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">iOS知识点总结笔记(三)</span>
+        <span class="prev-text nav-mobile">上一篇</span>
+      </a>
+    
+    
+      <a class="next" href="/2018/03/02/iOS 知识点总结笔记(一)：/">
+        <span class="next-text nav-default">iOS知识点总结笔记(一)</span>
+        <span class="prev-text nav-mobile">下一篇</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+      </footer>
+    
+
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+      </main>
+
+      <footer id="footer" class="footer">
+
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:1003580893@qq.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+          <a href="https://github.com/yongyuandouneng" class="iconfont icon-github" title="github"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+    
+  </div>
+
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2017 - 
+    
+    2018
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">郑永能</span>
+  </span>
+</div>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+  
+  
+
+  
+
+
+
+    
+  
+
+
+
+  
+  
+
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/pjax/jquery.pjax.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/nprogress/nprogress.min.js"></script>
+  
+
+
+    <script type="text/javascript" src="/js/src/even.js?v=2.9.0"></script>
+
+  </body>
+</html>

@@ -17,7 +17,7 @@
 
 
 
-  <meta name="description" content="时间都去哪儿了"/>
+  <meta name="description" content="iOS知识点总结笔记(三)"/>
 
 
 
@@ -40,7 +40,7 @@
 
 
 
-<link rel="canonical" href="http://yongyuandouneng.com/tags/iOS性能优化/"/>
+<link rel="canonical" href="http://yongyuandouneng.com/2018/05/21/iOS 知识点总结笔记(三)：/"/>
 
 
 
@@ -87,11 +87,7 @@
   window.config = {"title":"郑永能の博客","subtitle":"不积跬步，无以至千里；不积小流，无以成江海。","description":"时间都去哪儿了","author":"郑永能","language":"zh-Hans","timezone":"Asia/Shanghai","url":"http://yongyuandouneng.com","root":"/","permalink":":year/:month/:day/:title/","permalink_defaults":null,"source_dir":"source","public_dir":"public","tag_dir":"tags","archive_dir":"archives","category_dir":"categories","code_dir":"downloads/code","i18n_dir":":lang","skip_render":null,"new_post_name":":title.md","default_layout":"post","titlecase":false,"external_link":true,"filename_case":0,"render_drafts":false,"post_asset_folder":false,"relative_link":false,"future":true,"highlight":{"enable":true,"auto_detect":true,"line_number":true,"tab_replace":null,"first_line_number":"always1"},"default_category":"uncategorized","category_map":null,"tag_map":null,"date_format":"YYYY-MM-DD","time_format":"HH:mm:ss","per_page":10,"pagination_dir":"page","theme":"even","deploy":{"type":"git","repository":"https://github.com/yongyuandouneng/yongyuandouneng.github.io.git","branch":"master"},"ignore":[],"index_generator":{"per_page":10,"order_by":"-date","path":""},"disqus_shortname":null,"archive_generator":{"per_page":10,"yearly":true,"monthly":true,"daily":false},"category_generator":{"per_page":10},"feed":{"type":"atom","limit":20,"hub":"","content":true,"content_limit":140,"content_limit_delim":"","path":"atom.xml"},"tag_generator":{"per_page":10},"marked":{"gfm":true,"pedantic":false,"sanitize":false,"tables":true,"breaks":true,"smartLists":true,"smartypants":true,"modifyAnchors":"","autolink":true},"server":{"port":4000,"log":false,"ip":"0.0.0.0","compress":false,"header":true},"since":2017,"favicon":"/favicon.ico","menu":{"Home":"/","Archives":"/archives/","Tags":"/tags","Categories":"/categories","Github":"https://github.com/yongyuandouneng"},"color":"Default","toc":true,"fancybox":true,"pjax":true,"copyright":{"enable":true,"license":"<a rel=\"license\" href=\"http://creativecommons.org/licenses/by-nc/4.0/\" target=\"_blank\">知识共享署名-非商业性使用 4.0 国际许可协议</a>"},"reward":{"enable":false,"qrCode":{"wechat":null,"alipay":null}},"social":{"email":"1003580893@qq.com","stack-overflow":null,"twitter":null,"facebook":null,"linkedin":null,"google":null,"github":"https://github.com/yongyuandouneng","weibo":null,"zhihu":null,"douban":null,"pocket":null,"tumblr":null,"instagram":null},"leancloud":{"app_id":null,"app_key":null},"baidu_analytics":null,"baidu_verification":null,"google_analytics":null,"google_verification":null,"changyan":{"appid":null,"appkey":null},"livere_datauid":null,"version":"2.9.0"};
 </script>
 
-    <title>
-  
-    iOS性能优化 · 郑永能の博客
-  
-</title>
+    <title> iOS知识点总结笔记(三) - 郑永能の博客 </title>
   </head>
 
   <body><div id="mobile-navbar" class="mobile-navbar">
@@ -221,43 +217,126 @@
           <div id="content" class="content">
             
   
-  <section id="archive" class="archive">
-    
-      
-        <div class="archive-title tag">
-          <h2 class="archive-name">iOS性能优化</h2>
-        </div>
-      
-    
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          iOS知识点总结笔记(三)
+        
+      </h1>
 
-    
-      
-
-      <div class="archive-post">
-        <span class="archive-post-time">
-          
-            2018-02-15
-          
+      <div class="post-meta">
+        <span class="post-time">
+          2018-05-21
         </span>
-        <span class="archive-post-title">
-          <a href="/2018/02/15/iOS性能优化、卡顿检测、质量监控等知识点/" class="archive-post-link">
-            iOS性能优化
-          </a>
-        </span>
+        
+          <div class="post-category">
+            
+              <a href="/categories/iOS知识点总结/">iOS知识点总结</a>
+            
+          </div>
+        
+        
       </div>
-    
-  </section>
+    </header>
 
-  
-  <nav class="pagination">
     
+    
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-公众号技术文章"><span class="toc-text"><a href="#1-&#x516C;&#x4F17;&#x53F7;&#x6280;&#x672F;&#x6587;&#x7AE0;" class="headerlink" title="1.&#x516C;&#x4F17;&#x53F7;&#x6280;&#x672F;&#x6587;&#x7AE0;"></a>1.&#x516C;&#x4F17;&#x53F7;&#x6280;&#x672F;&#x6587;&#x7AE0;</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-面试题"><span class="toc-text"><a href="#2-&#x9762;&#x8BD5;&#x9898;" class="headerlink" title="2.&#x9762;&#x8BD5;&#x9898;"></a>2.&#x9762;&#x8BD5;&#x9898;</span></a></li></ol>
+    </div>
+  </div>
+
+
+
+    <div class="post-content">
+      
+        <h4 id="1-公众号技术文章"><a href="#1-公众号技术文章" class="headerlink" title="1.公众号技术文章"></a>1.公众号技术文章</h4><p><a href="https://mp.weixin.qq.com/s?__biz=MzI2NzQyODU0Ng==&amp;mid=2247483687&amp;idx=1&amp;sn=46dcae8aa5cefa3d0684a89eb576fb35&amp;scene=38#wechat_redirect" target="_blank" rel="noopener">1、Runtime关联属性详解</a></p>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzI2NzQyODU0Ng==&amp;mid=2247483681&amp;idx=1&amp;sn=52bd461e608610eeeca8e2dc42f6c7d7&amp;scene=38#wechat_redirect" target="_blank" rel="noopener">2、玩转Podfile</a></p>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzI2NzQyODU0Ng==&amp;mid=2247483680&amp;idx=1&amp;sn=eb88a696e3139cff7f2ee1c60b7488b0&amp;scene=38#wechat_redirect" target="_blank" rel="noopener">3、Cocoapods高级使用</a></p>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzI2NzQyODU0Ng==&amp;mid=2247483688&amp;idx=1&amp;sn=087fbab114e6ab7f73d1abed12d255df&amp;scene=38#wechat_redirect" target="_blank" rel="noopener">4、EXC_BAD_ACCESS详解</a></p>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzI2NzQyODU0Ng==&amp;mid=2247483671&amp;idx=1&amp;sn=a81409b7d68e8b93c7a203c47e3b2568&amp;scene=38#wechat_redirect" target="_blank" rel="noopener">5、iOS性能优化之Instruments</a></p>
+<h4 id="2-面试题"><a href="#2-面试题" class="headerlink" title="2.面试题"></a>2.面试题</h4><a id="more"></a>
+<p><a href="https://github.com/ChenYilong/iOSInterviewQuestions/blob/master/01《招聘一个靠谱的iOS》面试题参考答案/《招聘一个靠谱的iOS》面试题参考答案（上）.md" target="_blank" rel="noopener">1、《招聘一个靠谱的 iOS》—参考答案（上）</a></p>
+<p><a href="https://github.com/ChenYilong/iOSInterviewQuestions/blob/master/01《招聘一个靠谱的iOS》面试题参考答案/《招聘一个靠谱的iOS》面试题参考答案（下）.md" target="_blank" rel="noopener">2、《招聘一个靠谱的 iOS》—参考答案（下）</a></p>
+<p><a href="https://www.jianshu.com/p/1798ba01e9ef" target="_blank" rel="noopener">3、2018 iOS 面试题大全</a></p>
+<p><a href="https://github.com/lzyy/iOS-Developer-Interview-Questions" target="_blank" rel="noopener">4、iOS 开发面试问题</a></p>
+<p><a href="http://www.2bjs.com/求职笔记/iOS面试题集合(BAT及各大中小型公司" target="_blank" rel="noopener">5、iOS面试题集合(BAT及各大中小型公司)</a>/)</p>
+<p><a href="https://github.com/Timhbw/iOSInterviewQuestions/blob/master/iOS基础问答面试题连载-附答案/iOS基础问答面试题连载(一" target="_blank" rel="noopener">6、第一篇 ： iOS基础问答面试题连载(一)-附答案</a>-附答案.md)</p>
+<p><a href="https://github.com/Timhbw/iOSInterviewQuestions/blob/master/iOS基础问答面试题连载-附答案/iOS基础问答面试题连载(二" target="_blank" rel="noopener">7、第二篇 ： iOS基础问答面试题连载(二)-附答案</a>-附答案.md)</p>
+<p><a href="https://github.com/Timhbw/iOSInterviewQuestions/blob/master/iOS基础问答面试题连载-附答案/iOS基础问答面试题连载(三" target="_blank" rel="noopener">8、第三篇 ： iOS基础问答面试题连载(三)-附答案</a>-附答案.md)</p>
+<p><a href="https://github.com/Timhbw/iOSInterviewQuestions/blob/master/iOS基础问答面试题连载-附答案/iOS基础问答面试题连载(四" target="_blank" rel="noopener">9、第四篇 ：iOS基础问答面试题连载(四)-持续更新题目</a>-持续更新题目.md)</p>
+<p><a href="https://github.com/ming1016/study/wiki/校招iOS面试题" target="_blank" rel="noopener">10、校招iOS面试题</a></p>
+<p><a href="https://juejin.im/post/5aae70dc6fb9a028de447d24?utm_source=gold_browser_extension" target="_blank" rel="noopener">11、记录腾讯 2018 春季实习生校招面试经历</a></p>
+<p><a href="http://www.cocoachina.com/ios/20180330/22844.html" target="_blank" rel="noopener">12、阿里腾讯头条美团等iOS面试总结</a></p>
+<p><a href="https://juejin.im/post/5ad0e8975188255c9323b490?utm_source=gold_browser_extension" target="_blank" rel="noopener">13、美团iOS面试败北感悟 | 掘金技术征文</a></p>
+<p><a href="https://juejin.im/post/5ad80ad35188252eae3b22a4" target="_blank" rel="noopener">14、我是如何在天猫、蚂蚁金服、百度等大厂面试中被拒的 | 掘金技术征文</a></p>
+
+      
+    </div>
+
+    
+      
+      
+
+  <div class="post-copyright">
+    <p class="copyright-item">
+      <span>原文作者: </span>
+      <a href="http://yongyuandouneng.com">郑永能</a>
+    </p>
+    <p class="copyright-item">
+      <span>原文链接: </span>
+      <a href="http://yongyuandouneng.com/2018/05/21/iOS 知识点总结笔记(三)：/">http://yongyuandouneng.com/2018/05/21/iOS 知识点总结笔记(三)：/</a>
+    </p>
+    <p class="copyright-item">
+      <span>许可协议: </span>
+      
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+    </p>
+  </div>
+
+
+
+      
+      
+    
+
+    
+      <footer class="post-footer">
+        
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/2018/06/10/iOS Objective-C源码阅读/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">iOS Objective-C源码阅读</span>
+        <span class="prev-text nav-mobile">上一篇</span>
+      </a>
+    
+    
+      <a class="next" href="/2018/04/18/iOS 知识点总结笔记(二)：/">
+        <span class="next-text nav-default">iOS知识点总结笔记(二)</span>
+        <span class="prev-text nav-mobile">下一篇</span>
+        <i class="iconfont icon-right"></i>
+      </a>
     
   </nav>
 
+      </footer>
+    
+
+  </article>
 
 
           </div>
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
       </main>

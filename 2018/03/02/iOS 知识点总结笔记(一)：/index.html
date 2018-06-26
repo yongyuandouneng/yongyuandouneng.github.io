@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+
+  <meta name="description" content="iOS知识点总结笔记(一)"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="郑永能の博客">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.9.0" />
+
+
+
+<link rel="canonical" href="http://yongyuandouneng.com/2018/03/02/iOS 知识点总结笔记(一)：/"/>
+
+
+
+  <link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css" />
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/lib/nprogress/nprogress.min.css" />
+
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.9.0" />
+
+
+
+  
+
+
+
+  <script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+
+
+
+
+
+<script>
+  window.config = {"title":"郑永能の博客","subtitle":"不积跬步，无以至千里；不积小流，无以成江海。","description":"时间都去哪儿了","author":"郑永能","language":"zh-Hans","timezone":"Asia/Shanghai","url":"http://yongyuandouneng.com","root":"/","permalink":":year/:month/:day/:title/","permalink_defaults":null,"source_dir":"source","public_dir":"public","tag_dir":"tags","archive_dir":"archives","category_dir":"categories","code_dir":"downloads/code","i18n_dir":":lang","skip_render":null,"new_post_name":":title.md","default_layout":"post","titlecase":false,"external_link":true,"filename_case":0,"render_drafts":false,"post_asset_folder":false,"relative_link":false,"future":true,"highlight":{"enable":true,"auto_detect":true,"line_number":true,"tab_replace":null,"first_line_number":"always1"},"default_category":"uncategorized","category_map":null,"tag_map":null,"date_format":"YYYY-MM-DD","time_format":"HH:mm:ss","per_page":10,"pagination_dir":"page","theme":"even","deploy":{"type":"git","repository":"https://github.com/yongyuandouneng/yongyuandouneng.github.io.git","branch":"master"},"ignore":[],"index_generator":{"per_page":10,"order_by":"-date","path":""},"disqus_shortname":null,"archive_generator":{"per_page":10,"yearly":true,"monthly":true,"daily":false},"category_generator":{"per_page":10},"feed":{"type":"atom","limit":20,"hub":"","content":true,"content_limit":140,"content_limit_delim":"","path":"atom.xml"},"tag_generator":{"per_page":10},"marked":{"gfm":true,"pedantic":false,"sanitize":false,"tables":true,"breaks":true,"smartLists":true,"smartypants":true,"modifyAnchors":"","autolink":true},"server":{"port":4000,"log":false,"ip":"0.0.0.0","compress":false,"header":true},"since":2017,"favicon":"/favicon.ico","menu":{"Home":"/","Archives":"/archives/","Tags":"/tags","Categories":"/categories","Github":"https://github.com/yongyuandouneng"},"color":"Default","toc":true,"fancybox":true,"pjax":true,"copyright":{"enable":true,"license":"<a rel=\"license\" href=\"http://creativecommons.org/licenses/by-nc/4.0/\" target=\"_blank\">知识共享署名-非商业性使用 4.0 国际许可协议</a>"},"reward":{"enable":false,"qrCode":{"wechat":null,"alipay":null}},"social":{"email":"1003580893@qq.com","stack-overflow":null,"twitter":null,"facebook":null,"linkedin":null,"google":null,"github":"https://github.com/yongyuandouneng","weibo":null,"zhihu":null,"douban":null,"pocket":null,"tumblr":null,"instagram":null},"leancloud":{"app_id":null,"app_key":null},"baidu_analytics":null,"baidu_verification":null,"google_analytics":null,"google_verification":null,"changyan":{"appid":null,"appkey":null},"livere_datauid":null,"version":"2.9.0"};
+</script>
+
+    <title> iOS知识点总结笔记(一) - 郑永能の博客 </title>
+  </head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">郑永能の博客</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+      <a href="/">
+        <li class="mobile-menu-item">
+          
+          
+            首页
+          
+        </li>
+      </a>
+    
+      <a href="/archives/">
+        <li class="mobile-menu-item">
+          
+          
+            归档
+          
+        </li>
+      </a>
+    
+      <a href="/tags">
+        <li class="mobile-menu-item">
+          
+          
+            标签
+          
+        </li>
+      </a>
+    
+      <a href="/categories">
+        <li class="mobile-menu-item">
+          
+          
+            分类
+          
+        </li>
+      </a>
+    
+      <a href="https://github.com/yongyuandouneng">
+        <li class="mobile-menu-item">
+          
+          
+            Github
+          
+        </li>
+      </a>
+    
+  </ul>
+</nav>
+
+    <div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">郑永能の博客</a>
+</div>
+
+<nav class="site-navbar">
+  
+    <ul id="menu" class="menu">
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/">
+            
+            
+              首页
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            
+            
+              归档
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/tags">
+            
+            
+              标签
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/categories">
+            
+            
+              分类
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="https://github.com/yongyuandouneng">
+            
+            
+              Github
+            
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          iOS知识点总结笔记(一)
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2018-03-02
+        </span>
+        
+          <div class="post-category">
+            
+              <a href="/categories/iOS知识点总结/">iOS知识点总结</a>
+            
+          </div>
+        
+        
+      </div>
+    </header>
+
+    
+    
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#枚举位运算操作"><span class="toc-text"><a href="#&#x679A;&#x4E3E;&#x4F4D;&#x8FD0;&#x7B97;&#x64CD;&#x4F5C;" class="headerlink" title="&#x679A;&#x4E3E;&#x4F4D;&#x8FD0;&#x7B97;&#x64CD;&#x4F5C;"></a>&#x679A;&#x4E3E;&#x4F4D;&#x8FD0;&#x7B97;&#x64CD;&#x4F5C;</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#僵尸指针"><span class="toc-text"><a href="#&#x50F5;&#x5C38;&#x6307;&#x9488;" class="headerlink" title="&#x50F5;&#x5C38;&#x6307;&#x9488;"></a>&#x50F5;&#x5C38;&#x6307;&#x9488;</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#僵尸对象"><span class="toc-text"><a href="#&#x50F5;&#x5C38;&#x5BF9;&#x8C61;" class="headerlink" title="&#x50F5;&#x5C38;&#x5BF9;&#x8C61;"></a>&#x50F5;&#x5C38;&#x5BF9;&#x8C61;</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#系统是怎么把对象转化成普通对象的？"><span class="toc-text"><a href="#&#x7CFB;&#x7EDF;&#x662F;&#x600E;&#x4E48;&#x628A;&#x5BF9;&#x8C61;&#x8F6C;&#x5316;&#x6210;&#x666E;&#x901A;&#x5BF9;&#x8C61;&#x7684;&#xFF1F;" class="headerlink" title="&#x7CFB;&#x7EDF;&#x662F;&#x600E;&#x4E48;&#x628A;&#x5BF9;&#x8C61;&#x8F6C;&#x5316;&#x6210;&#x666E;&#x901A;&#x5BF9;&#x8C61;&#x7684;&#xFF1F;"></a>&#x7CFB;&#x7EDF;&#x662F;&#x600E;&#x4E48;&#x628A;&#x5BF9;&#x8C61;&#x8F6C;&#x5316;&#x6210;&#x666E;&#x901A;&#x5BF9;&#x8C61;&#x7684;&#xFF1F;</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#调试僵尸对象"><span class="toc-text"><a href="#&#x8C03;&#x8BD5;&#x50F5;&#x5C38;&#x5BF9;&#x8C61;" class="headerlink" title="&#x8C03;&#x8BD5;&#x50F5;&#x5C38;&#x5BF9;&#x8C61;"></a>&#x8C03;&#x8BD5;&#x50F5;&#x5C38;&#x5BF9;&#x8C61;</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#NSCache-与-NSDictionary-区别"><span class="toc-text"><a href="#NSCache-&#x4E0E;-NSDictionary-&#x533A;&#x522B;" class="headerlink" title="NSCache &#x4E0E; NSDictionary &#x533A;&#x522B;"></a>NSCache &#x4E0E; NSDictionary &#x533A;&#x522B;</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#为什么iOS的Masonry中的self不会循环引用"><span class="toc-text"><a href="#&#x4E3A;&#x4EC0;&#x4E48;iOS&#x7684;Masonry&#x4E2D;&#x7684;self&#x4E0D;&#x4F1A;&#x5FAA;&#x73AF;&#x5F15;&#x7528;" class="headerlink" title="&#x4E3A;&#x4EC0;&#x4E48;iOS&#x7684;Masonry&#x4E2D;&#x7684;self&#x4E0D;&#x4F1A;&#x5FAA;&#x73AF;&#x5F15;&#x7528;?"></a>&#x4E3A;&#x4EC0;&#x4E48;iOS&#x7684;Masonry&#x4E2D;&#x7684;self&#x4E0D;&#x4F1A;&#x5FAA;&#x73AF;&#x5F15;&#x7528;?</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#布局"><span class="toc-text"><a href="#&#x5E03;&#x5C40;" class="headerlink" title="&#x5E03;&#x5C40;"></a>&#x5E03;&#x5C40;</span></a></li></ol>
+    </div>
+  </div>
+
+
+
+    <div class="post-content">
+      
+        <h5 id="枚举位运算操作"><a href="#枚举位运算操作" class="headerlink" title="枚举位运算操作"></a>枚举位运算操作</h5><figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">/// 赋值枚举</span></span><br><span class="line"> SDWebImageOptions <span class="keyword">options</span> = SDWebImageHighPriority | SDWebImageScaleDownLargeImages;</span><br><span class="line"> <span class="comment">/// 移除已有枚举值</span></span><br><span class="line"> <span class="keyword">options</span> ^= SDWebImageHighPriority;</span><br><span class="line"> <span class="comment">/// 添加已有枚举值</span></span><br><span class="line"> <span class="keyword">options</span> |= SDWebImageTransformAnimatedImage;</span><br><span class="line"></span><br><span class="line"><span class="comment">/// 取枚举值判断</span></span><br><span class="line"> <span class="keyword">if</span> (<span class="keyword">options</span> &amp; SDWebImageTransformAnimatedImage &amp;&amp; <span class="keyword">options</span> &amp; SDWebImageHighPriority) &#123;</span><br><span class="line">     NSLog(@<span class="string">"在!"</span>);</span><br><span class="line"> &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">     NSLog(@<span class="string">"不在"</span>);</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<h5 id="僵尸指针"><a href="#僵尸指针" class="headerlink" title="僵尸指针"></a>僵尸指针</h5><p>“僵尸指针”就是野指针的一种情况，即该指针指向的对象已经被释放，但是却没有对当前指针赋值为nil。</p>
+<h5 id="僵尸对象"><a href="#僵尸对象" class="headerlink" title="僵尸对象"></a>僵尸对象</h5><p>简单的来说，僵尸对象是已经被释放的对象。如果在程序中再度使用该对象。僵尸对象不等于nil对象，存在内存里状态是dealloc,不能对其进行任何操作。</p>
+<h5 id="系统是怎么把对象转化成普通对象的？"><a href="#系统是怎么把对象转化成普通对象的？" class="headerlink" title="系统是怎么把对象转化成普通对象的？"></a>系统是怎么把对象转化成普通对象的？</h5><p>swizzle系统的dealloc方法，由运行期函数找出当前对象，修改对象的isa指针指向特殊的僵尸类生成_NSZombie_OriginalClass，打印出Zombie对象消息。<br><a id="more"></a></p>
+<h5 id="调试僵尸对象"><a href="#调试僵尸对象" class="headerlink" title="调试僵尸对象"></a>调试僵尸对象</h5><p>1、Edit Scheme – Diagnostice – Zombie Objects(打钩) </p>
+<p>2、Instruments – Zombies – 启动</p>
+<h5 id="NSCache-与-NSDictionary-区别"><a href="#NSCache-与-NSDictionary-区别" class="headerlink" title="NSCache 与 NSDictionary 区别"></a>NSCache 与 NSDictionary 区别</h5><p>1、NSCache 当系统资源耗尽时，会进行自动删减缓存。</p>
+<p>2、NSCache 系统会自动删减过久未使用的资源。</p>
+<p>3、NSCache 是线程安全的。可以设置最大缓存上限大小以及对象大小。</p>
+<p>4、NSCache 不会”拷贝”键。会保留它。</p>
+<p>5、NSDictionary 不具备以上功能，其它用法一样。</p>
+<h5 id="为什么iOS的Masonry中的self不会循环引用"><a href="#为什么iOS的Masonry中的self不会循环引用" class="headerlink" title="为什么iOS的Masonry中的self不会循环引用?"></a>为什么iOS的Masonry中的self不会循环引用?</h5><p>block在传入make_constraints:方法中的block是地址传递，没有进行拷贝，所以此时block是存在于栈上的，block中对self或者self.view存在强引用(而self或者self.view对block并不存在强引用)，所以不会产生循环引用。当block生命周期结束时，对self或者self.view的强引用release掉了。</p>
+<h5 id="布局"><a href="#布局" class="headerlink" title="布局"></a>布局</h5><p>首先两个方法都是异步执行。layoutSubviews方便数据计算，drawRect方便视图重绘。</p>
+<p> layoutSubviews在以下情况下会被调用：</p>
+<p> 1、init初始化不会触发layoutSubviews。</p>
+<p> 2、addSubview会触发layoutSubviews。</p>
+<p> 3、设置view的Frame会触发layoutSubviews，当然前提是frame的值设置前后发生了变化。</p>
+<p> 4、滚动一个UIScrollView会触发layoutSubviews。</p>
+<p> 5、旋转Screen会触发父UIView上的layoutSubviews事件。</p>
+<p> 6、改变一个UIView大小的时候也会触发父UIView上的layoutSubviews事件。</p>
+<p> 7、直接调用setLayoutSubviews。</p>
+<p> drawRect在以下情况下会被调用：</p>
+<p> 1、如果在UIView初始化时没有设置rect大小，将直接导致drawRect不被自动调用。drawRect 掉用是在Controller-&gt;loadView, Controller-&gt;viewDidLoad 两方法之后掉用的.所以不用担心在 控制器中,这些View的drawRect就开始画了.这样可以在控制器中设置一些值给View(如果这些View draw的时候需要用到某些变量 值).</p>
+<p> 2、该方法在调用sizeToFit后被调用，所以可以先调用sizeToFit计算出size。然后系统自动调用drawRect:方法。</p>
+<p> 3、通过设置contentMode属性值为UIViewContentModeRedraw。那么将在每次设置或更改frame的时候自动调用drawRect:。</p>
+<p> 4、直接调用setNeedsDisplay，或者setNeedsDisplayInRect:触发drawRect:，但是有个前提条件是rect不能为0。</p>
+<p> 以上1,2推荐；而3,4不提倡</p>
+<p> drawRect方法使用注意点：</p>
+<p> 1、 若使用UIView绘图，只能在drawRect：方法中获取相应的contextRef并绘图。如果在其他方法中获取将获取到一个invalidate 的ref并且不能用于画图。drawRect：方法不能手动显示调用，必须通过调用setNeedsDisplay 或 者 setNeedsDisplayInRect，让系统自动调该方法。</p>
+<p> 2、若使用calayer绘图，只能在drawInContext: 中（类似鱼drawRect）绘制，或者在delegate中的相应方法绘制。同样也是调用setNeedDisplay等间接调用以上方法。</p>
+<p> 3、若要实时画图，不能使用gestureRecognizer，只能使用touchbegan等方法来掉用setNeedsDisplay实时刷新屏幕</p>
+
+      
+    </div>
+
+    
+      
+      
+
+  <div class="post-copyright">
+    <p class="copyright-item">
+      <span>原文作者: </span>
+      <a href="http://yongyuandouneng.com">郑永能</a>
+    </p>
+    <p class="copyright-item">
+      <span>原文链接: </span>
+      <a href="http://yongyuandouneng.com/2018/03/02/iOS 知识点总结笔记(一)：/">http://yongyuandouneng.com/2018/03/02/iOS 知识点总结笔记(一)：/</a>
+    </p>
+    <p class="copyright-item">
+      <span>许可协议: </span>
+      
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+    </p>
+  </div>
+
+
+
+      
+      
+    
+
+    
+      <footer class="post-footer">
+        
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/2018/04/18/iOS 知识点总结笔记(二)：/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">iOS知识点总结笔记(二)</span>
+        <span class="prev-text nav-mobile">上一篇</span>
+      </a>
+    
+    
+      <a class="next" href="/2018/02/15/iOS性能优化、卡顿检测、质量监控等知识点/">
+        <span class="next-text nav-default">iOS性能优化</span>
+        <span class="prev-text nav-mobile">下一篇</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+      </footer>
+    
+
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+      </main>
+
+      <footer id="footer" class="footer">
+
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:1003580893@qq.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+          <a href="https://github.com/yongyuandouneng" class="iconfont icon-github" title="github"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+    
+  </div>
+
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2017 - 
+    
+    2018
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">郑永能</span>
+  </span>
+</div>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+  
+  
+
+  
+
+
+
+    
+  
+
+
+
+  
+  
+
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/pjax/jquery.pjax.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/nprogress/nprogress.min.js"></script>
+  
+
+
+    <script type="text/javascript" src="/js/src/even.js?v=2.9.0"></script>
+
+  </body>
+</html>
